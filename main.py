@@ -24,7 +24,7 @@ symbol_value = {
 
 def check_winnings(columns,lines,bet,values):
     winnings = 0
-    winning_lines =[]
+    winning_lines = []
     for line in range(lines):
         symbol = columns[0][line]
         for column in columns:
@@ -105,18 +105,18 @@ def get_number_of_lines():
 
 def get_bet():
     while True:
-        amount = input("What would you like to bet on each line?($) : ")
-        if amount.isdigit():
-            amount =int(amount)
-            if MIN_BET <= amount <= MAX_BET:
+        user_bet = input("What would you like to bet on each line?($) : ")
+        if user_bet.isdigit():
+            user_bet =int(user_bet)
+            if MIN_BET <= user_bet <= MAX_BET:
                 break
             else:
-                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}.")
+                print(f"Bet amount must be between ${MIN_BET} - ${MAX_BET}.")
 
         else:
             print("Please enter a number.")
 
-    return amount     
+    return user_bet     
 
 
 def spin(balance):
